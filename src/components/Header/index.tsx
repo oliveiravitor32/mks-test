@@ -1,4 +1,5 @@
-import { Container, ContainerLogo, CountCartItems } from "./style";
+import CartButton from "../CartButton";
+import { Container, ContainerLogo } from "./style";
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
         <h1>MKS</h1>
         <p>Sistemas</p>
       </ContainerLogo>
-      <CountCartItems />
+      <CartButton />
     </Container>
   );
 };

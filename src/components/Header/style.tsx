@@ -15,6 +15,7 @@ const ContainerLogo = styled.div`
   align-items: center;
   color: white;
   line-height: 19px;
+  gap: 5px;
   h1 {
     font-weight: 600;
     font-size: 40;
@@ -26,12 +27,4 @@ const ContainerLogo = styled.div`
   }
 `;
 
-const CountCartItems = styled.button`
-  background-color: white;
-  width: 100px;
-  height: 45px;
-  border-radius: 8px;
-  border: none;
-`;
-
-export { Container, ContainerLogo, CountCartItems };
+export { Container, ContainerLogo };
