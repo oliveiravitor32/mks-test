@@ -1,28 +1,27 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100%;
   padding-top: 20px;
-  gap: 8px;
-  max-width: 280px;
-  max-height: 300px;
-  background: white;
+  max-width: 218px;
+  max-height: 285px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0px 2px 8px 0px #00000022;
 `;
 
 const Image = styled.img`
-  max-height: 140px;
+  max-height: 138px;
 `;
 
 const ProductInfos = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
-  gap: 8px;
+  align-items: center;
+  padding: 0 10px;
+  gap: 4px;
   & > p {
     font-weight: 300;
     font-size: 10px;
@@ -33,8 +32,12 @@ const ProductInfos = styled.div`
 const ContainerWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
+  gap: 5px;
   justify-content: space-between;
   & > h2 {
+    text-align: left;
+    word-wrap: break-word;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -52,7 +55,7 @@ const ContainerWrapper = styled.div`
 
 const BuyButton = styled.button`
   width: 100%;
-  padding: 10px;
+  padding: 6.8px 0;
   border-radius: 0 0 10px 10px;
   border: none;
   font-weight: 600;
@@ -64,6 +67,14 @@ const BuyButton = styled.button`
   font-size: 14px;
   line-height: 18px;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2px;
+  & > svg {
+    font-size: 18px;
+  }
 `;
 
 export { Container, Image, ProductInfos, ContainerWrapper, BuyButton };

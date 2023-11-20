@@ -1,4 +1,5 @@
 import React from "react";
+import { FiShoppingBag } from "react-icons/fi";
 import {
   BuyButton,
   Container,
@@ -7,6 +8,7 @@ import {
   ProductInfos,
 } from "./style";
 import Product from "../../interfaces/Product";
+import formatCurrency from "../../utils/formatCurrency";
 
 interface ProductCardProps {
   data: Product;
@@ -14,20 +16,22 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const { photo, name, brand, price, description } = data;
-  console.log(data);
   return (
     <Container>
       <Image src={photo} />
       <ProductInfos>
         <ContainerWrapper>
           <h2>
-            {brand} <br /> {name}
+            {brand}&nbsp;{name}
           </h2>
-          <span>R${price}</span>
+          <span>{formatCurrency(price, "BRL")}</span>
         </ContainerWrapper>
         <p>{description}</p>
       </ProductInfos>
-      <BuyButton>Comprar</BuyButton>
+      <BuyButton>
+        <FiShoppingBag />
+        Comprar
+      </BuyButton>
     </Container>
   );
 };
