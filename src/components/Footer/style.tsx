@@ -6,7 +6,9 @@ const Container = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin-top: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 
   & > p {
     font-weight: 400;

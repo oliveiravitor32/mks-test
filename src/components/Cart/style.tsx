@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.section`
   width: 100%;
-  max-width: 300px;
+  max-width: 380px;
   background-color: #0f52ba;
   height: 100vh;
   position: fixed;
@@ -10,16 +10,20 @@ const Container = styled.section`
   flex-direction: column;
   top: 0;
   right: 0;
-  padding: 20px 20px 0 20px;
+  padding-top: 10px;
   z-index: 2;
+  gap: 8px;
 `;
 
 const ContainerWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-weight: 700;
   font-size: 28px;
   color: white;
+  padding: 0 20px;
+
   & > h2 {
     font-size: inherit;
     font-weight: inherit;
@@ -35,12 +39,34 @@ const ContainerWrapper = styled.div`
 const ItemsWrapper = styled.div`
   height: 80vh;
   background-color: #0400ff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+  padding: 30px 20px;
 `;
 
-const CloseButton = styled.button``;
+const CloseButton = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+`;
 
 const FinalizePurchaseButton = styled.button`
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  border: none;
   justify-self: flex-start;
+  cursor: pointer;
+  padding: 20px 0;
 `;
 
 export {
