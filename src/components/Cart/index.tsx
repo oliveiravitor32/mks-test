@@ -9,6 +9,7 @@ import {
   FinalizePurchaseButton,
 } from "./style";
 import CartItemInterface from "../../interfaces/CartItemInterface";
+import formatCurrency from "../../utils/formatCurrency";
 
 const Cart = () => {
   const queryClient = useQueryClient();
@@ -31,6 +32,14 @@ const Cart = () => {
     queryFn: () => addItem(),
   });
 
+  let total: number = 0;
+
+  if (data != undefined) {
+    total = data.reduce((total, item) => {
+      return item.price * item.qtd + total;
+    }, 0);
+  }
+
   return (
     <Container>
       <ContainerWrapper>
@@ -41,7 +50,7 @@ const Cart = () => {
       </ContainerWrapper>
       <ItemsWrapper>
         {data != undefined
-          ? data.map!((item: CartItemInterface) => (
+          ? data.map((item: CartItemInterface) => (
               <CartItem key={item.id} data={item} />
             ))
           : ""}
@@ -49,7 +58,7 @@ const Cart = () => {
       :
       <ContainerWrapper>
         <p>Total:</p>
-        <span>R$100</span>
+        <span>{formatCurrency(total, "BRL")}</span>
       </ContainerWrapper>
       <FinalizePurchaseButton>Finalizar Compra</FinalizePurchaseButton>
     </Container>

@@ -38,7 +38,6 @@ const ContainerWrapper = styled.div`
 
 const ItemsWrapper = styled.div`
   height: 80vh;
-  background-color: #0400ff;
   display: flex;
   flex-direction: column;
   gap: 20px;
