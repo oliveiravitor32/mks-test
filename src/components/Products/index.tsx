@@ -1,9 +1,9 @@
-import React from "react";
 import Container from "./style";
 import { useQuery } from "@tanstack/react-query";
 import fetchProducts from "../../services/api/fetchProducts";
 import Query from "../../interfaces/Query";
 import ProductCard from "../ProductCard";
+import Loading from "../Loading";
 
 const Products = () => {
   const query: Query = {
@@ -19,11 +19,15 @@ const Products = () => {
   });
 
   if (isLoading) {
-    return <div>Carregando...</div>;
+    return <Loading />;
   }
 
   if (error) {
-    return <div>Erro ao carregar produtos</div>;
+    return (
+      <Container>
+        <div>Erro ao carregar produtos</div>
+      </Container>
+    );
   }
 
   return (

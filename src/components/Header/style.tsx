@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 const Container = styled.header`
   background-color: #0f52ba;
+  width: 100%;
   height: 80px;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
 `;
 
 const ContainerLogo = styled.div`
